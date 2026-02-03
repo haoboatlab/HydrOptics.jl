@@ -18,7 +18,7 @@ affiliations:
    index: 1
  - name: Department of Mechanical and Aerospace Engineering, University of California San Diego, United States
    index: 2  
-date: 1 Febuary 2025
+date: 2 Febuary 2026
 bibliography: paper.bib
 
 ---
@@ -39,7 +39,7 @@ Here, we introduce `HydrOptics`, a Julia-based software package designed to faci
 
 The main features of `HydrOptics` are illustrated in figure 1.
 
-![Flow Diagram of the HydrOptics's main feature.\label{fig:flowchart}](FlowChart.png)
+![Flow diagram of the HydrOptics's main feature.\label{fig:flowchart}](FlowChart.png)
 
 `HydrOptics` requires user input in three categories.
 
@@ -61,7 +61,7 @@ To demonstrate the capabilities of this package, we simulate downwelling irradia
 
 * *Realistic surface geometry:* At every grid point on the free surface of an irregular wave field, $10^{3}$ photons are emitted in a domain of $x,y \in [\mathrm{−40m},\mathrm{40m}]$. 
 
-In both cases, the optical properties of water are identical, with an absorption coefficient $a = 0.0196\ \mathrm{m^{-1}}$ and a scattering coefficient $b = 0.0031\ \mathrm{m^{-1}}$, representing seawater attenuation at a wavelength of $490 \mathrm{nm}$ [@Smith:1981]. The irradiance field is stored on a grid of $512 \times 512 \times 190$ points, spanning a vertical domain of $z \in [\mathrm{−190m},\mathrm{10m}]$. Periodic boundary conditions are applied on horizontal directions. 
+In both cases, the optical properties of water are identical, with an absorption coefficient $a = 0.0196\ \mathrm{m^{-1}}$ and a scattering coefficient $b = 0.0031\ \mathrm{m^{-1}}$, representing seawater attenuation at a wavelength of $490\ \mathrm{nm}$ [@Smith:1981]. The irradiance field is stored on a grid of $512 \times 512 \times 190$ points, spanning a vertical domain of $z \in [\mathrm{−190m},\mathrm{10m}]$. Periodic boundary conditions are applied on horizontal directions. 
 
 ![Simulation of $10^{8}$ photons at the center of a flat surface. (a) Irradiance field on the horizontal plane at $30\ \mathrm{m}$ depth. (b) Irradiance field on the horizontal plane at $150\ \mathrm{m}$ depth. (c) Irradiance field on the vertical plane at the center. \label{fig:center1e8}](Center1e8.png)
 
@@ -69,7 +69,7 @@ In the flat surface case, all photons are transmitted perpendicular to the surfa
 
 In the second scenario, we simulate a more realistic case using imported irregular surface elevation data and a uniformly distributed light input. The spatial spacing of the incoming photons matches the `dx` and `dy` values used in the simulation grid. 
 
-![Simulation of 1000 Photons at each grid point with observed surface elevation. (a) Irradiance field on the horizontal plane at $30\ \mathrm{m}$ depth. (b) Irradiance field on the horizontal plane at $150\ \mathrm{m}$ depth. (c) Irradiance field on the vertical plane at the center. \label{fig:wholegrid1000}](Wholegrid1000.png)
+![Simulation of $10^{3}$ photons at each grid point with observed surface elevation. (a) Irradiance field on the horizontal plane at $30\ \mathrm{m}$ depth. (b) Irradiance field on the horizontal plane at $150\ \mathrm{m}$ depth. (c) Irradiance field on the vertical plane at the center. \label{fig:wholegrid1000}](Wholegrid1000.png)
 
 In the case of evenly distributed photons, similar phenomena to those observed with a flat surface are expected. The effects of absorption and scattering become more pronounced. At a depth of $30\ \mathrm{m}$, the downwelling irradiance distribution reflects the surface elevation field: photons are transmitted nearly perpendicular to the surface around the crests of free-surface waves, producing bright focal spots, while around the troughs, photons diverge, resulting in dimmer areas. As depth increases, absorption reduces the overall irradiance, while the scattering effect of seawater causes the focal spots to diverge and broaden.
 
